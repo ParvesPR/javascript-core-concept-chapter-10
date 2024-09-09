@@ -52,7 +52,27 @@ var createRect = function (width, height) {
         }
     }
 }
-var rect1 = createRect(150, 75)
-rect1.draw()
-var rect2 = createRect(220, 90)
-rect2.draw()
+// var rect1 = createRect(150, 75)
+// rect1.draw()
+// var rect2 = createRect(220, 90)
+// rect2.draw()
+
+// Constructor pattern
+var newRecta = function (width, height) {
+
+    this.width = width
+    this.height = height
+
+    this.draw = function () {
+        console.log('I am a rectangle');
+        this.print()
+    }
+
+    this.print = function () {
+        console.log('My width is ' + this.width);
+        console.log('My height is ' + this.height);
+
+    }
+}
+var rectangle = new newRecta(110,75);
+rectangle.draw();
