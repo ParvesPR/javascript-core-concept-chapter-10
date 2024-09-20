@@ -99,6 +99,14 @@ var init = new Function('width', 'height', `this.width = width
 
     }`
 )
-var initial= new init(256, 128)
+var initial = new init(256, 128)
 console.log(initial);
 
+// Call,Apply method
+function newFunction(c, d) {
+    console.log(this);
+    console.log(this.a + this.b + c + d);
+}
+newFunction()
+newFunction.call({ a: 10, b: 20 }, 5, 6) /* Call method */
+newFunction.apply({ a: 10, b: 20 }, [5, 6]) /* Apply method */
