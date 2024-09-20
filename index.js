@@ -110,3 +110,7 @@ function newFunction(c, d) {
 newFunction()
 newFunction.call({ a: 10, b: 20 }, 5, 6) /* Call method */
 newFunction.apply({ a: 10, b: 20 }, [5, 6]) /* Apply method */
+
+// Bind method
+var myBind = newFunction.bind({ a: 10, b: 12 })
+myBind(5, 3)
