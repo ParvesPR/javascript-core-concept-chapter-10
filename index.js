@@ -114,3 +114,25 @@ newFunction.apply({ a: 10, b: 20 }, [5, 6]) /* Apply method */
 // Bind method
 var myBind = newFunction.bind({ a: 10, b: 12 })
 myBind(5, 3)
+
+// Pass by value
+var x = 10;
+function simple(x) {
+    x = x + 100;
+    console.log(x);
+}
+simple(x)
+console.log(x);
+
+// Pass by reference
+var obj = {
+    a: 10,
+    b: 20
+}
+function changeObj(obj) {
+    obj.a = obj.a + 100
+    obj.b = obj.b + 100
+    console.log(obj);
+}
+changeObj(obj)
+console.log(obj);
