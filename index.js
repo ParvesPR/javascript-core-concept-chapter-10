@@ -74,8 +74,8 @@ var newRecta = function (width, height) {
 
     }
 }
-var rectangle = new newRecta(110, 75);
-rectangle.draw();
+// var rectangle = new newRecta(110, 75);
+// rectangle.draw();
 
 // Function constructor
 // How function an object in JavaScript
@@ -101,6 +101,17 @@ var init = new Function('width', 'height', `this.width = width
 )
 var initial = new init(256, 128)
 console.log(initial);
+
+// new keyword
+function myNew(constructor) {
+    var obj = {};
+    Object.setPrototypeOf(obj, constructor.prototype);
+    var argArray = Array.prototype.slice.apply(arguments);
+    constructor.apply(obj, argArray.slice(1))
+    return obj;
+}
+var myRect = myNew(newRecta, 95, 60);
+myRect.draw()
 
 // Call,Apply method
 function newFunction(c, d) {
