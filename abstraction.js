@@ -21,6 +21,9 @@ var abs = function (width, height) {
     Object.defineProperty(this, 'properties', {
         get: function () {
             return properties;
+        },
+        set: function (value) {
+            properties = value;
         }
     })
     this.first = function () {
@@ -33,5 +36,9 @@ var abs = function (width, height) {
 // Create a new instance of 'abs' and call the 'first' method
 var result = new abs(115, 75);
 result.first()
+result.properties = {
+    x: 123,
+    y: 456
+}
 console.log(result.properties);
 
