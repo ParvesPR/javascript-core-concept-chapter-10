@@ -12,6 +12,17 @@ var abs = function (width, height) {
         console.log('My width is ' + this.width);
         console.log('My height is ' + this.height);
     }.bind(this)
+    // Public method to access object properties
+    // It's also known as getter setter method
+    this.getProperties = function () {
+        return properties;
+    }
+    // Another getter setter method
+    Object.defineProperty(this, 'properties', {
+        get: function () {
+            return properties;
+        }
+    })
     this.first = function () {
         console.log('I am first function');
         print();
@@ -22,4 +33,5 @@ var abs = function (width, height) {
 // Create a new instance of 'abs' and call the 'first' method
 var result = new abs(115, 75);
 result.first()
+console.log(result.properties);
 
